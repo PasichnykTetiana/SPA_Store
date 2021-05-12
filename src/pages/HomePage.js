@@ -87,7 +87,7 @@ export default class HomePage extends React.Component {
 
     let paginationButtons = [];
     let buttonsCount = Math.ceil(totalItems / this.state.itemsPerPage);
-    console.log(buttonsCount);
+
     for (let i = 0; i < buttonsCount; i++) {
       paginationButtons[i] = (
         <li
@@ -107,7 +107,7 @@ export default class HomePage extends React.Component {
           <option value="3">3 products per page</option>
           <option value="6">6 products per page</option>
         </select>
-        <select onChange={this.handleChange} rerenderParent={this.rerender}>
+        <select onChange={this.handleChange}>
           <option value="asc">Asc</option>
           <option value="desc">Desc</option>
         </select>

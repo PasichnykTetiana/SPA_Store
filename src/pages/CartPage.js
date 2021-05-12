@@ -58,8 +58,6 @@ const CartPage = () => {
     total = total + item.productAmount * item.price;
   });
 
-  console.log(total);
-
   return (
     <div className="position-relative ">
       {result.length < 1 ? (
