@@ -65,8 +65,13 @@ export default function ButtonCart({ item, rerenderParent, value, children }) {
               total = total + product.productAmount * 1;
             });
 
-            localStorage.setItem('cart', JSON.stringify(cart));
-            localStorage.setItem('productsCount', total);
+            if (cart.length > 0) {
+              localStorage.setItem('cart', JSON.stringify(cart));
+              localStorage.setItem('productsCount', total);
+            } else {
+              localStorage.removeItem('cart');
+              localStorage.removeItem('productsCount');
+            }
           }
           rerenderParent();
 
