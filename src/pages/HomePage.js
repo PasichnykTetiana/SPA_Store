@@ -39,9 +39,6 @@ export default class HomePage extends React.Component {
   };
 
   onPaginationClick = (currentPage, sortValue) => {
-    console.log(currentPage, this.state.currentPage);
-    console.log(this.state.itemsPerPage);
-
     this.setState({
       productsLoaded: false,
       currentPage: currentPage,
