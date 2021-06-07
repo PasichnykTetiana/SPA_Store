@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/SPA_Store/static/css/main.b58decaf.chunk.css",
-    "main.js": "/SPA_Store/static/js/main.52088707.chunk.js",
-    "main.js.map": "/SPA_Store/static/js/main.52088707.chunk.js.map",
+    "main.css": "/SPA_Store/static/css/main.f692c2a4.chunk.css",
+    "main.js": "/SPA_Store/static/js/main.a0dca7d5.chunk.js",
+    "main.js.map": "/SPA_Store/static/js/main.a0dca7d5.chunk.js.map",
     "runtime-main.js": "/SPA_Store/static/js/runtime-main.0f332974.js",
     "runtime-main.js.map": "/SPA_Store/static/js/runtime-main.0f332974.js.map",
     "static/js/2.d7e219c8.chunk.js": "/SPA_Store/static/js/2.d7e219c8.chunk.js",
     "static/js/2.d7e219c8.chunk.js.map": "/SPA_Store/static/js/2.d7e219c8.chunk.js.map",
     "index.html": "/SPA_Store/index.html",
-    "static/css/main.b58decaf.chunk.css.map": "/SPA_Store/static/css/main.b58decaf.chunk.css.map",
+    "static/css/main.f692c2a4.chunk.css.map": "/SPA_Store/static/css/main.f692c2a4.chunk.css.map",
     "static/js/2.d7e219c8.chunk.js.LICENSE.txt": "/SPA_Store/static/js/2.d7e219c8.chunk.js.LICENSE.txt",
     "static/media/empty_cart.997bb803.png": "/SPA_Store/static/media/empty_cart.997bb803.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0f332974.js",
     "static/js/2.d7e219c8.chunk.js",
-    "static/css/main.b58decaf.chunk.css",
-    "static/js/main.52088707.chunk.js"
+    "static/css/main.f692c2a4.chunk.css",
+    "static/js/main.a0dca7d5.chunk.js"
   ]
 }
