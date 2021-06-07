@@ -60,7 +60,7 @@ const CartPage = () => {
       <div className="position-relative ">
         <div
           className="position-absolute top-0 start-50 translate-middle-x"
-          style={{ width: 540, marginTop: 20 }}>
+          style={{ marginTop: 20 }}>
           <div>
             <div>{result}</div>
 
