@@ -1,2 +1,0 @@
-.card-grid{display:grid;-webkit-justify-content:stretch;justify-content:stretch;text-align:center;padding:20px;margin:0 5px}.wrapper{display:grid;grid-template-columns:repeat(3,1fr);padding:30px 0}.single-photo{margin-top:auto;margin-bottom:auto}.btn:focus{box-shadow:none}.nav-link{color:#000}.cart-img{height:100vh}@media only screen and (max-width:600px){.wrapper{grid-template-columns:repeat(1,1fr)}.page-link{padding:7px}}
-/*# sourceMappingURL=main.f692c2a4.chunk.css.map */
