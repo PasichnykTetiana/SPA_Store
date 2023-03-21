@@ -60,7 +60,12 @@ export default function SingleProduct({ item, rerenderParent }) {
             {item.description}
           </Typography>
           <ButtonCart item={item} rerenderParent={rerenderParent} value="add">
-            <Button variant="outlined" color="primary" sx={{ mt: 1 }}>
+            <Button
+              component="div"
+              variant="outlined"
+              color="primary"
+              sx={{ mt: 1 }}
+            >
               Add to cart
             </Button>
           </ButtonCart>

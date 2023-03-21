@@ -48,7 +48,8 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function Layout({ pageName, children, select }) {
   const [categories, setCategories] = useState([]);
-  const productsCount = parseInt(localStorage.getItem("productsCount")) || 0;
+  const productsCount =
+    parseInt(localStorage.getItem("productsCount"), 10) || 0;
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles({ theme });
@@ -101,6 +102,7 @@ function Layout({ pageName, children, select }) {
           display="flex"
           justifyContent="end"
           alignItems="end"
+          item
           sm={4}
           xl={4}
         >

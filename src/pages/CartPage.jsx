@@ -25,20 +25,24 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+function createFunction(myFunction) {
+  return () => myFunction();
+}
+
 function CartPage() {
   const cart = JSON.parse(localStorage.getItem("cart")) || 0;
   const theme = useTheme();
-  const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+
+  const rerenderFunction = createFunction(forceUpdate);
 
   function deleteCart() {
     localStorage.removeItem("cart");
     localStorage.removeItem("productsCount");
-    rerender();
+    rerenderFunction();
   }
 
-  function rerender() {
-    forceUpdate();
-  }
+  const deleteCartFunction = createFunction(deleteCart);
 
   const result =
     cart &&
@@ -71,10 +75,12 @@ function CartPage() {
                     <Box sx={{ display: "flex", alignItems: "center", mt: 2 }}>
                       <ButtonCart
                         item={item}
-                        rerenderParent={rerender}
+                        rerenderParent={rerenderFunction}
                         value="delete"
                       >
-                        <Button variant="outlined">-</Button>
+                        <Button component="div" variant="outlined">
+                          -
+                        </Button>
                       </ButtonCart>
                       <Box mx={2}>
                         <Typography variant="h6" component="span">
@@ -83,10 +89,12 @@ function CartPage() {
                       </Box>
                       <ButtonCart
                         item={item}
-                        rerenderParent={rerender}
+                        rerenderParent={rerenderFunction}
                         value="add"
                       >
-                        <Button variant="outlined">+</Button>
+                        <Button component="div" variant="outlined">
+                          +
+                        </Button>
                       </ButtonCart>
                     </Box>
                     <Typography color="text.secondary" sx={{ mt: 2 }}>
@@ -104,10 +112,11 @@ function CartPage() {
 
   let total = 0;
 
-  cart &&
+  if (cart) {
     cart.forEach((item) => {
       total += item.productAmount * item.price;
     });
+  }
   return (
     <Layout className="position-relative ">
       <Grid
@@ -143,9 +152,14 @@ function CartPage() {
               alignItems: "center",
               justifyContent: "space-between",
               marginTop: theme.spacing(2),
+              marginBottom: theme.spacing(5),
             }}
           >
-            <Button variant="outlined" color="secondary" onClick={deleteCart}>
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={deleteCartFunction}
+            >
               Clear cart
             </Button>
             <Typography variant="h6">Total: {total.toFixed(2)}</Typography>

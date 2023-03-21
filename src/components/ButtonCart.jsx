@@ -77,8 +77,14 @@ export default function ButtonCart({ item, rerenderParent, value, children }) {
         rerenderParent();
 
         break;
+      default:
+        console.log("there is no such value");
     }
   }
 
-  return <span onClick={onClick}>{children}</span>;
+  return (
+    <button type="button" className="button-cart" onClick={onClick}>
+      {children}
+    </button>
+  );
 }

@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { createUseStyles } from "react-jss";
-import { Loader } from "./Loader";
+import Loader from "./Loader";
 
 const useStyles = createUseStyles((theme) => ({
   link: {
@@ -102,7 +102,6 @@ function CategoriesMenu({ categories, categoryLocation }) {
                 }
                 sx={{ margin: 1 }}
               >
-                {/* <Item primary={singleCategory} /> */}
                 {singleCategory}
               </MuiLink>
             ))}

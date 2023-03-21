@@ -47,6 +47,7 @@ function Footer({
 
   return (
     <StyledFooter
+      component="footer"
       sx={{
         margin: !isSmallScreen ? "auto  -24px 0 -24px" : "auto  -16px 0 -16px",
       }}

@@ -1,1 +1,1 @@
-Technologies: React, JavaScript, Bootstrap, HTML, SASS. Function and Class Components
+Technologies: React, JavaScript, Material UI, SASS

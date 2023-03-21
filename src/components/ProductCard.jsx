@@ -60,7 +60,10 @@ export default function ProductCard({ item, rerenderParent }) {
             Price: {item.price}
           </Typography>
           <ButtonCart item={item} rerenderParent={rerenderParent} value="add">
-            <IconButton sx={{ boxShadow: "0 0 2px 2px rgba(139,139,139,0.4)" }}>
+            <IconButton
+              sx={{ boxShadow: "0 0 2px 2px rgba(139,139,139,0.4)" }}
+              component="div"
+            >
               <ShoppingCartIcon />
             </IconButton>
           </ButtonCart>

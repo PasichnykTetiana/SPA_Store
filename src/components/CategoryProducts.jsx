@@ -5,11 +5,15 @@ import { getCategoryProducts } from "../api";
 import ProductCard from "./ProductCard";
 import ProductCardCollection from "./ProductCardCollection";
 import Layout from "./Layout";
-import { Loader } from "./Loader";
+import Loader from "./Loader";
+
+function createRerenderFunction(forceUpdate) {
+  return () => forceUpdate();
+}
 
 function CategoryProducts() {
   const match = useRouteMatch("/category/:categoryName");
-  const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
   const [category, setCategory] = useState({
     product: [],
@@ -31,12 +35,16 @@ function CategoryProducts() {
     }
   }, [match.params.categoryName, category.pageName]);
 
-  function rerender() {
-    forceUpdate();
-  }
+  const rerenderFunction = createRerenderFunction(forceUpdate);
 
   const result = category.product.map((item) => {
-    return <ProductCard item={item} key={item.id} rerenderParent={rerender} />;
+    return (
+      <ProductCard
+        item={item}
+        key={item.id}
+        rerenderParent={rerenderFunction}
+      />
+    );
   });
 
   return (

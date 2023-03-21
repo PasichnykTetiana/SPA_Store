@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import { getProduct } from "../api";
 import SingleProduct from "../components/SingleProduct";
 import Layout from "../components/Layout";
-import { Loader } from "../components/Loader";
+import Loader from "../components/Loader";
 
 function ProductDetailsPage({ match }) {
   const [product, setProduct] = useState(null);

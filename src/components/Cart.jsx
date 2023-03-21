@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "@mui/system";
+import { styled } from "@mui/material/styles";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import { Badge } from "@mui/material";
 

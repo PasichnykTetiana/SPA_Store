@@ -1,7 +1,7 @@
 import React from "react";
 import { CircularProgress, Grid } from "@mui/material";
 
-export function Loader() {
+function Loader() {
   return (
     <Grid
       width="100%"
@@ -13,3 +13,5 @@ export function Loader() {
     </Grid>
   );
 }
+
+export default Loader;
