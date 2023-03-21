@@ -4,6 +4,14 @@
   "private": true,
   "homepage": "https://pasichnyktetiana.github.io/SPA_Store/",
   "dependencies": {
+    "@emotion/cache": "^11.10.5",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.12",
+    "@mui/styled-engine-sc": "^5.11.11",
+    "@mui/styles": "^5.11.13",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
@@ -11,8 +19,9 @@
     "package": "^1.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-jss": "^10.10.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "sass": "^1.32.11",
     "sass-loader": "^11.0.1",
     "web-vitals": "^1.1.1"
@@ -22,6 +31,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "fix": "yarn prettier --write src && yarn lint:scripts . --fix src/**/*.js",
+    "prettier": "node_modules/.bin/prettier",
+    "lint:scripts": "node_modules/.bin/eslint",
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },
@@ -44,6 +56,15 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^5.0.0"
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "node-sass": "^5.0.0",
+    "prettier": "2.8.6"
   }
 }

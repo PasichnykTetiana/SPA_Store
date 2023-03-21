@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
 export default function ButtonCart({ item, rerenderParent, value, children }) {
   function onClick() {
-    const cart = JSON.parse(localStorage.getItem('cart'));
+    const cart = JSON.parse(localStorage.getItem("cart"));
 
     switch (value) {
-      case 'add':
+      case "add":
         if (cart) {
           const result = cart.findIndex((product) => {
-            return product.id == item.id;
+            return product.id === item.id;
           });
           if (result >= 0) {
             cart[result].productAmount += 1;
@@ -25,14 +25,14 @@ export default function ButtonCart({ item, rerenderParent, value, children }) {
           let total = 0;
 
           cart.forEach((product) => {
-            total = total + product.productAmount * 1;
+            total += product.productAmount * 1;
           });
 
-          localStorage.setItem('cart', JSON.stringify(cart));
-          localStorage.setItem('productsCount', total);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          localStorage.setItem("productsCount", total);
         } else {
           localStorage.setItem(
-            'cart',
+            "cart",
             JSON.stringify([
               {
                 id: item.id,
@@ -41,18 +41,18 @@ export default function ButtonCart({ item, rerenderParent, value, children }) {
                 title: item.title,
                 productAmount: 1,
               },
-            ]),
+            ])
           );
-          localStorage.setItem('productsCount', 1);
+          localStorage.setItem("productsCount", 1);
         }
         rerenderParent();
 
         break;
 
-      case 'delete':
+      case "delete":
         if (cart) {
           const result = cart.findIndex((product) => {
-            return product.id == item.id;
+            return product.id === item.id;
           });
           if (result >= 0 && cart[result].productAmount > 1) {
             cart[result].productAmount -= 1;
@@ -63,15 +63,15 @@ export default function ButtonCart({ item, rerenderParent, value, children }) {
           let total = 0;
 
           cart.forEach((product) => {
-            total = total + product.productAmount * 1;
+            total += product.productAmount * 1;
           });
 
           if (cart.length > 0) {
-            localStorage.setItem('cart', JSON.stringify(cart));
-            localStorage.setItem('productsCount', total);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            localStorage.setItem("productsCount", total);
           } else {
-            localStorage.removeItem('cart');
-            localStorage.removeItem('productsCount');
+            localStorage.removeItem("cart");
+            localStorage.removeItem("productsCount");
           }
         }
         rerenderParent();
